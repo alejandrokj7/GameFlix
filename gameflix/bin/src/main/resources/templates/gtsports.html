@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>GameFlix</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="../static/css/bootstrap.css" th:href="@{../static/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all" />
+<!-- pignose css -->
+<link href="../static/css/pignose.layerslider.css" th:href="@{../static/css/pignose.layerslider.css}" rel="stylesheet" type="text/css" media="all" />
+
+
+<!-- //pignose css -->
+<link href="../static/css/style.css" rel="stylesheet"  th:href="@{../static/css/style.css}"  type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="../static/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- cart -->
+	<script src="../static/js/simpleCart.min.js"></script>
+<!-- cart -->
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="../static/js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+<script src="../static/js/jquery.easing.min.js"></script>
+
+<script> 
+function abrir(url) { 
+open(url,'','top=300,left=300,width=300,height=300') ; 
+} 
+</script>
+<script >
+var myVar;
+function functiontimeout() {
+	myVar = setTimeout(closewindow, 10000); 	
+}
+function closewindow(){
+	alert("Tiempo de demo expirado");
+	$('iframe').attr('src', $('iframe').attr('src')); 
+	$('#miModal').modal('hide');  
+}
+function pausevideo(){
+	$('iframe').attr('src', $('iframe').attr('src'));
+	clearTimeout(myVar);
+}
+</script>
+</head>
+<body>
+
+<!-- header-bot -->
+<div class="header-bot">
+	<div class="container">
+		<div class="col-md-3 header-left">
+			<h1><a href="index.html"><img src="../images/GAMEFLIX_logo.png"></a></h1>
+		</div>
+		<div class="col-md-6 header-middle">
+			<form>
+				<div class="search">
+					<input type="search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
+				</div>
+				<div class="section_room">
+					<select id="country" onchange="change_country(this.value)" class="frm-field required">
+						<option value="null">Todas las categorias</option>
+						<option value="null">Aventuras</option>   
+						<option value="AX">Carreras</option>
+						<option value="AX">Deportes</option>  
+						<option value="AX">Estrategia</option>
+						<option value="AX">Infantiles</option>
+					</select>
+				</div>
+				<div class="sear-sub">
+					<input type="submit" value=" ">
+				</div>
+				<div class="clearfix"></div>
+			</form>
+		</div>
+		
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //header-bot -->
+<!-- banner -->
+<div class="ban-top">
+	<div class="container">
+		<div class="top_nav_left">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav menu__list">
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="juegos.html">NOVEDADES <span class="sr-only">(current)</span></a></li>										
+					<li class=" menu__item"><a class="menu__link" href="juegos.html">TOP DESCARGAS</a></li>
+					<li class=" menu__item"><a class="menu__link" href="juegos.html">GRATIS</a></li>
+					<li class=" menu__item"><a class="menu__link" href="juegos.html">DEMO</a></li>
+					<li class=" menu__item"><a class="menu__link" >CONTACTO</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>	
+		</div>
+		<div class="top_nav_right">
+			<div class="cart box_1">
+						<a href="checkout.html">
+							<h3> <div class="total">
+								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+								
+							</h3>
+						</a>
+						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						
+			</div>	
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //banner-top -->
+
+<!-- single -->
+<div class="single">
+	<div class="container">
+		<div class="col-md-6 single-right-left animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
+			<div class="grid ../images_3_of_2">
+				<div class="flexslider">
+					<img src="../images/gtSport.jpg" alt="" class="pro-image-front" width="70%" height="70%">
+					
+					<div class="clearfix"></div>
+				</div>	
+			</div>
+		</div>
+		<div class="col-md-6 single-right-left simpleCart_shelfItem animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
+					<h3>Gran Turismo Sports</h3>
+					<p><span class="item_price">55€</span> <del>- 70€</del></p>					
+					<div class="occasion-cart">
+						<a href="#" class="item_add hvr-outline-out button2">Add to cart</a>
+					</div>					
+					
+					
+		</div>
+		
+				<div class="clearfix"> </div>
+		<div class="col-md-demo single-right-left simpleCart_shelfItem animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
+			<button type="button" onclick="functiontimeout()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal">
+				Jugar Demo Gran Turismo Sports
+			</button>
+			<div class="clearfix"> </div>
+		</div>
+			<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" onclick="pausevideo()" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Demo Gran Turismo Sports</h4>
+						</div>
+						<div class="modal-body">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/5s-iBSZPP0A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+						<button position: absolute; onclick="pausevideo()" type="button" class=" btn btn-primary btn-lg" data-dismiss="modal" data-toggle="modal" data-target="#miModal2">
+							Detener demo Gran Turismo Sports
+							
+						</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="miModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">					
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							Demo del Gran Turismo Sports detenida
+						</div>						
+					</div>
+				</div>
+			</div>
+				<div class="bootstrap-tab animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">					
+						
+						<div id="myTabContent" class="tab-content">
+							<div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">
+								<h5>Descripcion del juego</h5>
+								<p>Gran Turismo Sport es un videojuego de carreras desarrollado por Polyphony Digital y publicado por Sony Interactive Entertainment para la consola de videojuegos PlayStation 4. Fue anunciado en la Semana de Juegos de París 2015 y es el decimotercer juego en general en la serie de videojuegos de Gran Turismo y el primer juego de la serie que se estrenará en PlayStation 4. El creador de la serie, Kazunori Yamauchi, en una nueva generación o nueva era de los juegos de Gran Turismo, con los primeros seis lanzamientos principales reconocidos como la primera generación y GT Sport marcando el comienzo de una nueva era en la segunda generación.</p>
+							</div>							
+							
+						</div>
+					</div>
+				</div>
+	</div>
+</div>
+<!-- //single -->
+<!-- //product-nav -->
+</body>
+</html>
