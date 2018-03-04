@@ -22,7 +22,7 @@ body
 }
 
 #form-div {
-	background-color:rgba(72,72,72,0.4);
+	background-color:#337ab7;
 	padding-left:35px;
 	padding-right:35px;
 	padding-top:35px;
@@ -40,7 +40,7 @@ body
 .montform .feedback-input {
 	color:#3c3c3c;
 	font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
+    font-weight:500;
 	font-size: 18px;
 	border-radius: 0;
 	line-height: 22px;

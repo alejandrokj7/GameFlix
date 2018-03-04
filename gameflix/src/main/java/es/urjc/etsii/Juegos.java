@@ -11,7 +11,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-public class Juego {
+public class Juegos {
 	private int id;
 	private String nombre;
 	private String version;
@@ -21,12 +21,12 @@ public class Juego {
 	private String edadmin;
 	private String descripcion;
 	private String enlaceVideo;
-	private List<Partida> partidas;
+	private List<Partidas> partidas;
 	
 	
-	public Juego() {
+	public Juegos() {
 	}
-	public Juego(String nombre, String version, String anio, String estudio, String nacionalidad, String edadmin, String descripcion,  String enlaceVideo) {
+	public Juegos(String nombre, String version, String anio, String estudio, String nacionalidad, String edadmin, String descripcion,  String enlaceVideo) {
 		this.nombre = nombre;
 		this.version = version;
 		this.anio = anio;
@@ -46,10 +46,10 @@ public class Juego {
 		this.id = id;
 	}
 	@OneToMany(mappedBy = "juego", cascade=CascadeType.ALL)
-	public List<Partida> getPartidas() {
+	public List<Partidas> getPartidas() {
 		return partidas;
 	}
-	public void setPartidas(List<Partida> partidas) {
+	public void setPartidas(List<Partidas> partidas) {
 		this.partidas = partidas;
 	}
 		
@@ -108,6 +108,13 @@ public class Juego {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public String getEnlaceVideo() {
+		return enlaceVideo;
+	}
+
+	public void setEnlaceVideo(String enlaceVideo) {
+		this.enlaceVideo = enlaceVideo;
 	}
 		
 }

@@ -17,4 +17,9 @@ public class MainController {
     public String inicio(Map<String, Object> model) {
         return "index";
     }
+	
+    @RequestMapping("/admin")
+    public String administradores(Map<String, Object> model) {
+        return "administradores";
+    }
 }

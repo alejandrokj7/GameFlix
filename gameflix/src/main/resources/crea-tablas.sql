@@ -1,5 +1,6 @@
 CREATE TABLE `test`.`usuarios` 
-( `nombre_usuario` VARCHAR(255) NOT NULL 
+( `id` INT(11) NOT NULL AUTO_INCREMENT
+,  `nombre_usuario` VARCHAR(255) NOT NULL 
 , `contrasena` VARCHAR(255) NOT NULL 
 , `nombre` VARCHAR(255) DEFAULT NULL 
 , `apellidos` VARCHAR(255) DEFAULT NULL 
@@ -9,12 +10,13 @@ CREATE TABLE `test`.`usuarios`
 , `residencia` VARCHAR(255) DEFAULT NULL  
 , `perfil` VARCHAR(255) DEFAULT NULL 
 , `bloqueado` INT(11) DEFAULT NULL 
-, PRIMARY KEY (`Nombre_Usuario`)
+, PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE `test`.`juegos` 
-( `nombre` VARCHAR(255) NOT NULL 
+( `id` INT(11) NOT NULL AUTO_INCREMENT
+,`nombre` VARCHAR(255) DEFAULT NULL 
 , `version` VARCHAR(255) DEFAULT NULL 
 , `anio` INT(11) DEFAULT NULL 
 , `estudio` VARCHAR(255) DEFAULT NULL 
@@ -22,18 +24,21 @@ CREATE TABLE `test`.`juegos`
 , `edadmin` INT(11) DEFAULT NULL 
 , `descripcion` VARCHAR(255) DEFAULT NULL 
 , `enlaceVideo` VARCHAR(255) DEFAULT NULL 
-, PRIMARY KEY (`nombre`)
+, PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+insert into juegos(nombre,version,anio,estudio,nacionalidad,edadmin,descripcion,enlaceVideo) values ('a','a',1,'a','a',1,'a','a'),
+  ('b','b',2,'b','b',2,'b','b');
 
 
 
 CREATE TABLE `test`.`partidas` 
 ( `id` INT(11) NOT NULL AUTO_INCREMENT
 , `usuario` VARCHAR(255) DEFAULT NULL 
-, `juego` VARCHAR(255) DEFAULT NULL 
 , `fecha` VARCHAR(255) DEFAULT NULL 
 , `hora` VARCHAR(255) DEFAULT NULL  
+, `duracion` VARCHAR(255) DEFAULT NULL  
+, `juegoid` VARCHAR(255) DEFAULT NULL 
+, `usuarioid` VARCHAR(255) DEFAULT NULL 
 , PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

@@ -11,7 +11,7 @@ import java.util.List;
  * @author J. M. Colmenar
  */
 @RepositoryRestResource(collectionResourceRel = "partidas", path = "partidas")
-public interface PartidaRestRepository extends CrudRepository<Partida, Integer> {
+public interface PartidaRestRepository extends CrudRepository<Partidas, Integer> {
 
     // Declaración de método para buscar peliculas por título:
     //List<Partida> findByTitulo(@Param("titulo") String titulo);

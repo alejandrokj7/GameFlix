@@ -10,18 +10,18 @@ import javax.persistence.*;
  *
  */
 @Entity
-public class Partida {
+public class Partidas {
 	private int id;	
 	private String duracion;
 	private String fecha;
 	private String hora;
-	private Juego juego;	
-	private Usuario usuario;	
+	private Juegos juego;	
+	private Usuarios usuario;	
 	
 	
-	public Partida() {
+	public Partidas() {
 	}
-	public Partida( String duracion, String fecha,	String hora) {
+	public Partidas( String duracion, String fecha,	String hora) {
 		this.duracion = duracion;
 		this.fecha = fecha;
 		this.hora = hora;
@@ -39,22 +39,22 @@ public class Partida {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="juego_id")	
-	public Juego getJuego() {
+	@JoinColumn(name="juegoid")	
+	public Juegos getJuego() {
 		return juego;
 	}
 
-	public void setJuego(Juego juego) {
+	public void setJuego(Juegos juego) {
 		this.juego = juego;
 	}
 	
 	@ManyToOne
-	@JoinColumn(name="usuario_id")	
-	public Usuario getUsuario() {
+	@JoinColumn(name="usuarioid")	
+	public Usuarios getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(Usuarios usuario) {
 		this.usuario = usuario;
 	}
 	

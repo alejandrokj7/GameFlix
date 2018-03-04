@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-public class Usuario {
+public class Usuarios {
 	private int id;
 	private String nombre_usuario;
 	private String nombre;
@@ -27,12 +27,12 @@ public class Usuario {
 	private String pais;
 	private String residencia;
 	private String perfil;
-	private List<Partida> partidas;
+	private List<Partidas> partidas;
 	
 	
-	public Usuario() {
+	public Usuarios() {
 	}
-	public Usuario(String nombre, String apellidos, String correo, String fecha, String pais, String residencia, String perfil) {
+	public Usuarios(String nombre, String apellidos, String correo, String fecha, String pais, String residencia, String perfil) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.correo = correo;
@@ -62,10 +62,10 @@ public class Usuario {
 		this.contrasena = contrasena;
 	}
 	@OneToMany(mappedBy = "usuario", cascade=CascadeType.ALL)
-	public List<Partida> getPartidas() {
+	public List<Partidas> getPartidas() {
 		return partidas;
 	}
-	public void setPartidas(List<Partida> partidas) {
+	public void setPartidas(List<Partidas> partidas) {
 		this.partidas = partidas;
 	}
 		

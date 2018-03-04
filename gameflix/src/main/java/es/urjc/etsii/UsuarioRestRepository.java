@@ -11,7 +11,7 @@ import java.util.List;
  * @author J. M. Colmenar
  */
 @RepositoryRestResource(collectionResourceRel = "usuario", path = "usuario")
-public interface UsuarioRestRepository extends CrudRepository<Usuario, Integer> {
+public interface UsuarioRestRepository extends CrudRepository<Usuarios, Integer> {
 
     // Declaración de método para buscar peliculas por título:
     //List<Usuario> findByTitulo(@Param("nombre") String nombre);
